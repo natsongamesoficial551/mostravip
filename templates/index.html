@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz - Amazônia Equatoriana e Colombiana</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,11 +14,13 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: linear-gradient(135deg, #0d4f3c 0%, #1a7355 50%, #2d8f47 100%);
       min-height: 100vh;
       color: #fff;
       overflow-x: hidden;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
     }
 
     .background-pattern {
@@ -31,22 +34,22 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 30px;
       position: relative;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       animation: fadeInDown 1s ease;
     }
 
     .header h1 {
-      font-size: 3.2em;
-      font-weight: 700;
-      margin-bottom: 15px;
+      font-size: 3.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
       background: linear-gradient(45deg, #4ade80, #22d3ee, #a78bfa);
       background-size: 200% 200%;
       -webkit-background-clip: text;
@@ -54,21 +57,23 @@
       background-clip: text;
       animation: gradientShift 3s ease-in-out infinite;
       text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      letter-spacing: -0.02em;
     }
 
     .subtitle {
-      font-size: 1.3em;
+      font-size: 1.4em;
       opacity: 0.9;
-      margin-bottom: 10px;
-      font-weight: 300;
+      margin-bottom: 15px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px;
+      border-radius: 24px;
+      padding: 50px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       animation: slideUp 0.8s ease;
       position: relative;
@@ -89,23 +94,28 @@
 
     .credits {
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 35px;
       border-left: 4px solid #4ade80;
+      line-height: 1.7;
     }
 
     .credits h3 {
       color: #4ade80;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 1.1em;
     }
 
     .credits p {
-      line-height: 1.6;
+      line-height: 1.8;
       opacity: 0.9;
+      margin-bottom: 8px;
+      font-size: 1.05em;
     }
 
     .instagram-link {
@@ -129,24 +139,27 @@
 
     .description {
       background: rgba(0, 0, 0, 0.15);
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 30px;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 35px;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1.1em;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
     }
 
     .start-btn {
       background: linear-gradient(45deg, #4ade80, #22d3ee);
       color: white;
       border: none;
-      padding: 18px 50px;
+      padding: 20px 55px;
       border-radius: 50px;
-      font-size: 1.2em;
-      font-weight: bold;
+      font-size: 1.25em;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
       position: relative;
       overflow: hidden;
@@ -194,45 +207,49 @@
 
     .question {
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 20px;
+      border-radius: 18px;
+      padding: 35px;
+      margin-bottom: 25px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       animation: questionSlide 0.5s ease;
     }
 
     .question h3 {
-      font-size: 1.4em;
-      margin-bottom: 20px;
+      font-size: 1.5em;
+      margin-bottom: 25px;
       color: #4ade80;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
     }
 
     .question-number {
       background: linear-gradient(45deg, #4ade80, #22d3ee);
       color: white;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 0.9em;
+      font-size: 1em;
+      flex-shrink: 0;
     }
 
     .options {
       display: grid;
-      gap: 12px;
+      gap: 15px;
     }
 
     .option {
       background: rgba(255, 255, 255, 0.05);
       border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 15px 20px;
+      border-radius: 15px;
+      padding: 18px 25px;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
@@ -261,14 +278,16 @@
     }
 
     .option input[type="radio"] {
-      margin-right: 12px;
-      transform: scale(1.2);
+      margin-right: 15px;
+      transform: scale(1.3);
     }
 
     .option label {
       cursor: pointer;
-      font-size: 1.1em;
-      line-height: 1.4;
+      font-size: 1.15em;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: 0.01em;
     }
 
     .finish-btn {
@@ -388,12 +407,14 @@
     }
 
     @media (max-width: 768px) {
-      .container { padding: 15px; }
-      .header h1 { font-size: 2.5em; }
-      .card { padding: 25px; }
-      .question { padding: 20px; }
-      .options { gap: 8px; }
-      .option { padding: 12px 15px; }
+      .container { padding: 20px; }
+      .header h1 { font-size: 2.8em; }
+      .card { padding: 30px; }
+      .question { padding: 25px; }
+      .options { gap: 12px; }
+      .option { padding: 15px 20px; }
+      .option label { font-size: 1.05em; }
+      .start-btn { padding: 16px 45px; font-size: 1.1em; }
     }
   </style>
 </head>
@@ -440,10 +461,10 @@
             <h3><span class="question-number">1</span> Onde se localiza a Amazônia Equatoriana e Colombiana?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q1" value="B"> Norte da América do Sul</label>
+                <label><input type="radio" name="q1" value="A"> Norte da América do Sul</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q1" value="A"> Sul da Europa</label>
+                <label><input type="radio" name="q1" value="B"> Sul da Europa</label>
               </div>
               <div class="option">
                 <label><input type="radio" name="q1" value="C"> Leste da Ásia</label>
@@ -455,37 +476,37 @@
           </div>
 
           <div class="question">
-            <h3><span class="question-number">2</span> Qual tipo de floresta nunca alaga?</h3>
+            <h3><span class="question-number">2</span> Qual é a principal característica do clima da região?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q2" value="A"> Várzea</label>
+                <label><input type="radio" name="q2" value="A"> Quente e úmido o ano todo</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q2" value="B"> Igapó</label>
+                <label><input type="radio" name="q2" value="B"> Seco e frio</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q2" value="C"> Floresta de Terra Firme</label>
+                <label><input type="radio" name="q2" value="C"> Temperado e seco</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q2" value="D"> Manguezal</label>
+                <label><input type="radio" name="q2" value="D"> Estações bem definidas</label>
               </div>
             </div>
           </div>
 
           <div class="question">
-            <h3><span class="question-number">3</span> Qual é a principal característica do clima da região?</h3>
+            <h3><span class="question-number">3</span> Qual rio é um dos principais da região?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q3" value="C"> Quente e úmido o ano todo</label>
+                <label><input type="radio" name="q3" value="A"> Amazonas</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q3" value="A"> Seco e frio</label>
+                <label><input type="radio" name="q3" value="B"> Nilo</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q3" value="B"> Temperado e seco</label>
+                <label><input type="radio" name="q3" value="C"> Danúbio</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q3" value="D"> Estações bem definidas</label>
+                <label><input type="radio" name="q3" value="D"> Reno</label>
               </div>
             </div>
           </div>
@@ -494,124 +515,34 @@
             <h3><span class="question-number">4</span> Qual destes animais é típico da fauna amazônica?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q4" value="D"> Onça-pintada</label>
+                <label><input type="radio" name="q4" value="A"> Onça-pintada</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q4" value="A"> Tigre-siberiano</label>
+                <label><input type="radio" name="q4" value="B"> Tigre-siberiano</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q4" value="B"> Lobo-do-ártico</label>
+                <label><input type="radio" name="q4" value="C"> Lobo-do-ártico</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q4" value="C"> Urso-pardo</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="question">
-            <h3><span class="question-number">5</span> Qual rio é um dos principais da região?</h3>
-            <div class="options">
-              <div class="option">
-                <label><input type="radio" name="q5" value="B"> Amazonas</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q5" value="A"> Nilo</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q5" value="C"> Danúbio</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q5" value="D"> Reno</label>
+                <label><input type="radio" name="q4" value="D"> Urso-pardo</label>
               </div>
             </div>
           </div>
 
           <div class="question">
-            <h3><span class="question-number">6</span> Um povo originário do Equador é:</h3>
+            <h3><span class="question-number">5</span> Um problema atual da região é:</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q6" value="C"> Shuar</label>
+                <label><input type="radio" name="q5" value="A"> Mineração ilegal</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q6" value="A"> Yanomami</label>
+                <label><input type="radio" name="q5" value="B"> Nevascas</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q6" value="B"> Guarani</label>
+                <label><input type="radio" name="q5" value="C"> Furacões</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q6" value="D"> Mapuche</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="question">
-            <h3><span class="question-number">7</span> Qual planta é típica da Amazônia?</h3>
-            <div class="options">
-              <div class="option">
-                <label><input type="radio" name="q7" value="D"> Castanheira-do-pará</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q7" value="A"> Carvalho</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q7" value="B"> Pinheiro</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q7" value="C"> Cacto</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="question">
-            <h3><span class="question-number">8</span> Um dos impactos históricos foi:</h3>
-            <div class="options">
-              <div class="option">
-                <label><input type="radio" name="q8" value="A"> Ciclo da borracha</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q8" value="B"> Revolução industrial</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q8" value="C"> Guerra fria</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q8" value="D"> Era medieval</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="question">
-            <h3><span class="question-number">9</span> Um problema atual da região é:</h3>
-            <div class="options">
-              <div class="option">
-                <label><input type="radio" name="q9" value="C"> Mineração ilegal</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q9" value="A"> Nevascas</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q9" value="B"> Furacões</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q9" value="D"> Vulcões</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="question">
-            <h3><span class="question-number">10</span> Por que a Amazônia é importante globalmente?</h3>
-            <div class="options">
-              <div class="option">
-                <label><input type="radio" name="q10" value="B"> Regula o clima e armazena carbono</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q10" value="A"> Fonte de petróleo</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q10" value="C"> Produz carros</label>
-              </div>
-              <div class="option">
-                <label><input type="radio" name="q10" value="D"> Turismo internacional</label>
+                <label><input type="radio" name="q5" value="D"> Vulcões</label>
               </div>
             </div>
           </div>
@@ -656,44 +587,47 @@
 
     function updateProgress() {
       let answered = 0;
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 5; i++) {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         if (selected) answered++;
       }
-      const progress = (answered / 10) * 100;
+      const progress = (answered / 5) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
     }
 
     function finalizarQuiz() {
       const respostas = {
-        q1: 'B', q2: 'C', q3: 'C', q4: 'D', q5: 'B',
-        q6: 'C', q7: 'D', q8: 'A', q9: 'C', q10: 'B'
+        q1: 'A', // Norte da América do Sul
+        q2: 'A', // Quente e úmido o ano todo
+        q3: 'A', // Amazonas
+        q4: 'A', // Onça-pintada
+        q5: 'A'  // Mineração ilegal
       };
       
       let acertos = 0;
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 5; i++) {
         const resposta = document.querySelector(`input[name="q${i}"]:checked`);
         if (resposta && resposta.value === respostas[`q${i}`]) {
           acertos++;
         }
       }
 
-      const porcentagem = (acertos / 10) * 100;
+      const porcentagem = (acertos / 5) * 100;
       
       document.getElementById('quiz').style.display = 'none';
       document.getElementById('resultado').style.display = 'block';
       
-      document.getElementById('scoreDisplay').innerText = `${acertos}/10`;
-      document.getElementById('pontuacao').innerText = `Você acertou ${acertos} de 10 perguntas (${porcentagem}%)`;
+      document.getElementById('scoreDisplay').innerText = `${acertos}/5`;
+      document.getElementById('pontuacao').innerText = `Você acertou ${acertos} de 5 perguntas (${porcentagem}%)`;
       
       const performanceEl = document.getElementById('performance');
-      if (acertos >= 9) {
+      if (acertos >= 5) {
         performanceEl.innerText = 'Excelente!';
         performanceEl.className = 'performance excellent';
-      } else if (acertos >= 7) {
+      } else if (acertos >= 4) {
         performanceEl.innerText = 'Muito Bom!';
         performanceEl.className = 'performance good';
-      } else if (acertos >= 5) {
+      } else if (acertos >= 2) {
         performanceEl.innerText = 'Regular';
         performanceEl.className = 'performance average';
       } else {
