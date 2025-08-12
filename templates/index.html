@@ -184,6 +184,44 @@
       margin: 10px;
     }
 
+    .pdf-btn {
+      background: linear-gradient(45deg, #dc2626, #ef4444);
+      color: white;
+      border: none;
+      padding: 20px 55px;
+      border-radius: 50px;
+      font-size: 1.25em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+      position: relative;
+      overflow: hidden;
+      margin: 10px;
+    }
+
+    .pdf-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .pdf-btn:hover::before {
+      left: 100%;
+    }
+
+    .pdf-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+    }
+
     .chat-btn::before {
       content: '';
       position: absolute;
@@ -230,6 +268,77 @@
 
     #chat {
       display: none;
+    }
+
+    #pdf {
+      display: none;
+    }
+
+    .pdf-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.8s ease;
+      position: relative;
+      overflow: hidden;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .pdf-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .pdf-header h2 {
+      font-size: 2.5em;
+      color: #4ade80;
+      margin-bottom: 15px;
+    }
+
+    .pdf-content {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    .pdf-section {
+      margin-bottom: 30px;
+    }
+
+    .pdf-section h3 {
+      color: #4ade80;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pdf-section p, .pdf-section ul {
+      margin-bottom: 15px;
+    }
+
+    .pdf-section ul {
+      padding-left: 20px;
+    }
+
+    .pdf-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: linear-gradient(45deg, #4ade80, #22d3ee);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      color: white;
+      font-weight: 600;
     }
 
     .chat-container {
@@ -729,6 +838,9 @@
           <button class="chat-btn" onclick="abrirChat()">
             <i class="fas fa-comments"></i> Chat com IA Amazônica
           </button>
+          <button class="pdf-btn" onclick="abrirPDF()">
+            <i class="fas fa-file-pdf"></i> Material de Estudo PDF
+          </button>
         </center>
       </div>
     </div>
@@ -767,6 +879,132 @@
       </div>
     </div>
 
+    <div id="pdf">
+      <button class="back-btn" onclick="voltarInicio()">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+      
+      <div class="pdf-container">
+        <div class="pdf-header">
+          <h2><i class="fas fa-leaf"></i> Amazônia Equatoriana e Colombiana</h2>
+          <p>Biologia, História e Importância Global</p>
+        </div>
+        
+        <div class="pdf-content">
+          <div class="pdf-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Localização e Extensão</h3>
+            <p>A Amazônia Equatorial e Colombiana localiza-se ao norte da América do Sul. Abrange uma parte significativa da Colômbia (cerca de 42% do seu território) e se estende por áreas do Brasil, Peru, Equador e Venezuela.</p>
+            <p>Esta vasta região está situada na zona equatorial, caracterizada por alta umidade e temperaturas constantes, e é cortada por uma complexa rede hidrográfica, com destaque para o imponente Rio Amazonas e seus afluentes.</p>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-tree"></i> Ecossistemas da Amazônia</h3>
+            <ul>
+              <li><strong>Floresta de Terra Firme:</strong> Não alaga, rica em árvores gigantes</li>
+              <li><strong>Várzeas:</strong> Alagadas periodicamente, solo fértil</li>
+              <li><strong>Igapós:</strong> Alagadas o ano todo, vegetação adaptada</li>
+            </ul>
+            <div class="highlight">
+              Alta diversidade biológica em todos os tipos de ecossistemas
+            </div>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-seedling"></i> Flora e Clima Amazônico</h3>
+            <h4>Flora:</h4>
+            <ul>
+              <li>Castanheira-do-pará, sumaúma (ceiba)</li>
+              <li>Palmeiras, cipós, bromélias e orquídeas</li>
+              <li>Plantas medicinais usadas pelos povos locais</li>
+            </ul>
+            
+            <h4>Clima e Rios:</h4>
+            <ul>
+              <li>Rios da região: Amazonas, Napo, Putumayo</li>
+              <li>Clima equatorial: quente e úmido o ano todo</li>
+              <li>Umidade > 80%, temperaturas entre 24°C e 28°C</li>
+              <li>Chuvas frequentes, sem estação seca</li>
+            </ul>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-paw"></i> Fauna Amazônica</h3>
+            <ul>
+              <li>Mais de mil espécies de aves: harpia, tucanos</li>
+              <li>Mamíferos: onça-pintada, anta, botos, macacos</li>
+              <li>Répteis: anaconda, jacaré, lagartos</li>
+              <li>Insetos e rãs venenosas</li>
+              <li>Peixes: piranha, pirarucu, bagres</li>
+            </ul>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-users"></i> Povos Originários</h3>
+            <h4>Colômbia:</h4>
+            <p>Povos Tikuna, Yucuna, Uitoto</p>
+            
+            <h4>Equador:</h4>
+            <p>Povos Achuar, Shuar, Kichwa, Huaorani</p>
+            
+            <p>Vivem da pesca, agricultura e coleta. Possuem cultura própria, espiritualidade ligada à natureza.</p>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-history"></i> História e Impactos</h3>
+            
+            <h4>1. Colonização</h4>
+            <ul>
+              <li>Chegada dos europeus: espanhóis e portugueses</li>
+              <li>Exploração de recursos, catequização e guerras</li>
+              <li>Doenças devastaram povos nativos</li>
+            </ul>
+
+            <h4>2. Séculos XIX-XX</h4>
+            <ul>
+              <li>Ciclo da borracha e mineração</li>
+              <li>Construção de estradas e conflitos fundiários</li>
+              <li>Primeiras áreas de proteção ambiental</li>
+            </ul>
+
+            <h4>3. Problemas Atuais</h4>
+            <ul>
+              <li>Mineração ilegal e poluição de rios</li>
+              <li>Conflitos armados (sobretudo na Colômbia)</li>
+              <li>Desmatamento e queimadas</li>
+            </ul>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-globe-americas"></i> Importância Global</h3>
+            
+            <div class="highlight">
+              <h4>Clima:</h4>
+              <p>Regula o clima e produz oxigênio</p>
+              
+              <h4>Carbono:</h4>
+              <p>Absorve CO2, ajuda a conter o aquecimento global</p>
+              
+              <h4>Biodiversidade:</h4>
+              <p>Fonte de saberes tradicionais e espécies únicas</p>
+              
+              <h4>Responsabilidade:</h4>
+              <p>Proteção é dever coletivo global</p>
+            </div>
+          </div>
+
+          <div class="pdf-section">
+            <h3><i class="fas fa-leaf"></i> Conclusão</h3>
+            <p>A Amazônia Equatoriana e Colombiana é vital para o planeta, abrigando povos, culturas e riquezas naturais únicas.</p>
+            <p>Enfrenta ameaças sérias que exigem ação imediata.</p>
+            <div class="highlight">
+              É urgente proteger a floresta e seus habitantes para garantir o futuro do nosso planeta.
+            </div>
+            <p><em>Fontes: WWF, ONU Meio Ambiente, Ministérios locais</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="quiz">
       <div class="card">
         <div class="progress-bar">
@@ -778,10 +1016,10 @@
             <h3><span class="question-number">1</span> Onde se localiza a Amazônia Equatoriana e Colombiana?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q1" value="A"> Norte da América do Sul</label>
+                <label><input type="radio" name="q1" value="A"> Sul da Europa</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q1" value="B"> Sul da Europa</label>
+                <label><input type="radio" name="q1" value="B"> Norte da América do Sul</label>
               </div>
               <div class="option">
                 <label><input type="radio" name="q1" value="C"> Leste da Ásia</label>
@@ -814,13 +1052,13 @@
             <h3><span class="question-number">3</span> Qual rio é um dos principais da região?</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q3" value="A"> Amazonas</label>
+                <label><input type="radio" name="q3" value="A"> Nilo</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q3" value="B"> Nilo</label>
+                <label><input type="radio" name="q3" value="B"> Danúbio</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q3" value="C"> Danúbio</label>
+                <label><input type="radio" name="q3" value="C"> Amazonas</label>
               </div>
               <div class="option">
                 <label><input type="radio" name="q3" value="D"> Reno</label>
@@ -850,16 +1088,16 @@
             <h3><span class="question-number">5</span> Um problema atual da região é:</h3>
             <div class="options">
               <div class="option">
-                <label><input type="radio" name="q5" value="A"> Mineração ilegal</label>
+                <label><input type="radio" name="q5" value="A"> Nevascas</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q5" value="B"> Nevascas</label>
+                <label><input type="radio" name="q5" value="B"> Furacões</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q5" value="C"> Furacões</label>
+                <label><input type="radio" name="q5" value="C"> Vulcões</label>
               </div>
               <div class="option">
-                <label><input type="radio" name="q5" value="D"> Vulcões</label>
+                <label><input type="radio" name="q5" value="D"> Mineração ilegal</label>
               </div>
             </div>
           </div>
@@ -901,10 +1139,16 @@
       document.getElementById('chatInput').focus();
     }
 
+    function abrirPDF() {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('pdf').style.display = 'block';
+    }
+
     function voltarInicio() {
       document.getElementById('chat').style.display = 'none';
       document.getElementById('quiz').style.display = 'none';
       document.getElementById('resultado').style.display = 'none';
+      document.getElementById('pdf').style.display = 'none';
       document.getElementById('inicio').style.display = 'block';
     }
 
@@ -927,11 +1171,11 @@
 
     function finalizarQuiz() {
       const respostas = {
-        q1: 'A', // Norte da América do Sul
+        q1: 'B', // Norte da América do Sul
         q2: 'A', // Quente e úmido o ano todo
-        q3: 'A', // Amazonas
+        q3: 'C', // Amazonas
         q4: 'A', // Onça-pintada
-        q5: 'A'  // Mineração ilegal
+        q5: 'D'  // Mineração ilegal
       };
       
       let acertos = 0;

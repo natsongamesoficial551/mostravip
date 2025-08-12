@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz - Amazônia Equatoriana e Colombiana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f0f0f0;
+    }
+    #quiz, #resultado {
+      display: none;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .pergunta {
+      margin-bottom: 20px;
+    }
+    .pergunta h3 {
+      margin: 0;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="inicio">
+    <h1>Quiz - Amazônia Equatoriana e Colombiana</h1>
+    <p><strong>Créditos:</strong> Natan Borges (Criador do site), Douglas Bayer, Manuela Passos, Ricardo, André Lucas, Cauã Soares, Ricardo Roddriges.</p>
+    <p>Este site apresenta um quiz educativo sobre o trabalho realizado a respeito da Amazônia Equatoriana e Colombiana. O conteúdo aborda temas como ecossistemas, fauna, flora, povos originários, impactos históricos e importância global dessa região vital para o planeta.</p>
+    <button onclick="iniciarQuiz()">Iniciar Quiz</button>
+  </div>
+
+  <form id="quiz">
+    <div class="pergunta">
+      <h3>1. Onde se localiza a Amazônia Equatoriana e Colombiana?</h3>
+      <label><input type="radio" name="q1" value="B"> Norte da América do Sul</label><br>
+      <label><input type="radio" name="q1" value="A"> Sul da Europa</label><br>
+      <label><input type="radio" name="q1" value="C"> Leste da Ásia</label><br>
+      <label><input type="radio" name="q1" value="D"> África Central</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>2. Qual tipo de floresta nunca alaga?</h3>
+      <label><input type="radio" name="q2" value="A"> Várzea</label><br>
+      <label><input type="radio" name="q2" value="B"> Igapó</label><br>
+      <label><input type="radio" name="q2" value="C"> Floresta de Terra Firme</label><br>
+      <label><input type="radio" name="q2" value="D"> Manguezal</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>3. Qual é a principal característica do clima da região?</h3>
+      <label><input type="radio" name="q3" value="C"> Quente e úmido o ano todo</label><br>
+      <label><input type="radio" name="q3" value="A"> Seco e frio</label><br>
+      <label><input type="radio" name="q3" value="B"> Temperado e seco</label><br>
+      <label><input type="radio" name="q3" value="D"> Estações bem definidas</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>4. Qual destes animais é típico da fauna amazônica?</h3>
+      <label><input type="radio" name="q4" value="D"> Onça-pintada</label><br>
+      <label><input type="radio" name="q4" value="A"> Tigre-siberiano</label><br>
+      <label><input type="radio" name="q4" value="B"> Lobo-do-ártico</label><br>
+      <label><input type="radio" name="q4" value="C"> Urso-pardo</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>5. Qual rio é um dos principais da região?</h3>
+      <label><input type="radio" name="q5" value="B"> Amazonas</label><br>
+      <label><input type="radio" name="q5" value="A"> Nilo</label><br>
+      <label><input type="radio" name="q5" value="C"> Danúbio</label><br>
+      <label><input type="radio" name="q5" value="D"> Reno</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>6. Um povo originário do Equador é:</h3>
+      <label><input type="radio" name="q6" value="C"> Shuar</label><br>
+      <label><input type="radio" name="q6" value="A"> Yanomami</label><br>
+      <label><input type="radio" name="q6" value="B"> Guarani</label><br>
+      <label><input type="radio" name="q6" value="D"> Mapuche</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>7. Qual planta é típica da Amazônia?</h3>
+      <label><input type="radio" name="q7" value="D"> Castanheira-do-pará</label><br>
+      <label><input type="radio" name="q7" value="A"> Carvalho</label><br>
+      <label><input type="radio" name="q7" value="B"> Pinheiro</label><br>
+      <label><input type="radio" name="q7" value="C"> Cacto</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>8. Um dos impactos históricos foi:</h3>
+      <label><input type="radio" name="q8" value="A"> Ciclo da borracha</label><br>
+      <label><input type="radio" name="q8" value="B"> Revolução industrial</label><br>
+      <label><input type="radio" name="q8" value="C"> Guerra fria</label><br>
+      <label><input type="radio" name="q8" value="D"> Era medieval</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>9. Um problema atual da região é:</h3>
+      <label><input type="radio" name="q9" value="C"> Mineração ilegal</label><br>
+      <label><input type="radio" name="q9" value="A"> Nevascas</label><br>
+      <label><input type="radio" name="q9" value="B"> Furacões</label><br>
+      <label><input type="radio" name="q9" value="D"> Vulcões</label>
+    </div>
+
+    <div class="pergunta">
+      <h3>10. Por que a Amazônia é importante globalmente?</h3>
+      <label><input type="radio" name="q10" value="B"> Regula o clima e armazena carbono</label><br>
+      <label><input type="radio" name="q10" value="A"> Fonte de petróleo</label><br>
+      <label><input type="radio" name="q10" value="C"> Produz carros</label><br>
+      <label><input type="radio" name="q10" value="D"> Turismo internacional</label>
+    </div>
+
+    <button type="button" onclick="finalizarQuiz()">Finalizar Quiz</button>
+  </form>
+
+  <div id="resultado">
+    <h2>Resultado:</h2>
+    <p id="pontuacao"></p>
+  </div>
+
+  <script>
+    function iniciarQuiz() {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('quiz').style.display = 'block';
+    }
+
+    function finalizarQuiz() {
+      const respostas = {
+        q1: 'B', q2: 'C', q3: 'C', q4: 'D', q5: 'B',
+        q6: 'C', q7: 'D', q8: 'A', q9: 'C', q10: 'B'
+      };
+      let acertos = 0;
+      for (let i = 1; i <= 10; i++) {
+        const resposta = document.querySelector(`input[name="q${i}"]:checked`);
+        if (resposta && resposta.value === respostas[`q${i}`]) {
+          acertos++;
+        }
+      }
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('resultado').style.display = 'block';
+      document.getElementById('pontuacao').innerText = `Você acertou ${acertos} de 10 perguntas.`;
+    }
+  </script>
+</body>
+</html>
